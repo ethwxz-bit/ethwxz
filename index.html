@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alliance Industrial Doors Ltd | Manufacturers & Installers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; background-color: #f4f4f4; }
+        .alliance-blue { background-color: #0b3d91; }
+        .alliance-red { background-color: #d92323; }
+        
+        .nav-item {
+            border-right: 1px solid #ddd;
+            padding: 0 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #444;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .hero-banner {
+            background: linear-gradient(rgba(11, 61, 145, 0.8), rgba(11, 61, 145, 0.8)), 
+                        url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: #0b3d91;
+        }
+
+        .page-content { display: none; }
+        .page-content.active { display: block; }
+
+        .product-box {
+            border: 1px solid #ccc;
+            background: white;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .product-box:hover {
+            border-color: #0b3d91;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .img-placeholder {
+            background: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            height: 100%;
+            width: 100%;
+        }
+
+        .model-badge {
+            background: #0b3d91;
+            color: white;
+            font-size: 11px;
+            padding: 2px 10px;
+            font-weight: 800;
+            border-radius: 0 0 0 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Header -->
+    <div class="bg-white py-4 border-b-4 border-[#0b3d91]">
+        <div class="max-w-6xl mx-auto px-4 flex flex-wrap justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <div class="text-left">
+                    <h1 class="text-3xl font-black italic text-[#0b3d91] leading-none uppercase tracking-tighter">Alliance</h1>
+                    <p class="text-[10px] font-bold text-[#d92323] tracking-[0.3em] uppercase">Industrial Doors Ltd</p>
+                </div>
+            </div>
+            <div class="text-right hidden sm:block">
+                <p class="text-xs text-gray-500 font-bold uppercase">Call our Dudley Office</p>
+                <p class="text-2xl font-black text-[#0b3d91]">01384 251 951</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex flex-wrap border-x border-gray-200">
+            <button onclick="showPage('home')" class="nav-item py-4 hover:bg-gray-50 border-l border-gray-200">Home</button>
+            <button onclick="showPage('about')" class="nav-item py-4 hover:bg-gray-50">About Us</button>
+            <button onclick="showPage('products')" class="nav-item py-4 hover:bg-gray-50">Our Doors</button>
+            <button onclick="showPage('installation')" class="nav-item py-4 hover:bg-gray-50">Installation & Service</button>
+            <button onclick="showPage('contact')" class="nav-item py-4 hover:bg-[#d92323] hover:text-white bg-[#0b3d91] text-white border-none ml-auto px-8">Get a Quote</button>
+        </div>
+    </nav>
+
+    <!-- PAGE: HOME -->
+    <div id="home-page" class="page-content active">
+        <header class="hero-banner py-32 text-white">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="max-w-xl bg-black/40 p-8 border-l-8 border-[#d92323] backdrop-blur-sm">
+                    <h2 class="text-4xl font-black uppercase mb-4 leading-tight">UK Manufacturers of <br>High Quality Industrial Doors</h2>
+                    <p class="text-lg mb-6">Established in 1999. Specializing in manufacture, supply, and installation nationwide from our Dudley factory.</p>
+                    <button onclick="showPage('products')" class="bg-[#d92323] text-white px-8 py-4 font-bold uppercase text-sm hover:bg-red-700 transition-colors">Explore Products</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="py-16 bg-white">
+            <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-[#0b3d91] uppercase border-b-2 border-gray-100 pb-4 mb-4">Quality & Reliability Since 1999</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Alliance Industrial Doors Ltd is a specialist in the manufacture of all types of industrial doors. Based at Sovereign Works in Dudley, we serve clients throughout the UK.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Every door is engineered in-house to your specific dimensions, ensuring a perfect fit and long-term durability.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-50 p-4 border-l-4 border-[#0b3d91] font-bold text-xs uppercase text-[#0b3d91]">✓ DHF Members</div>
+                        <div class="bg-gray-50 p-4 border-l-4 border-[#d92323] font-bold text-xs uppercase text-[#d92323]">✓ UK Manufactured</div>
+                    </div>
+                </div>
+                <div class="bg-gray-100 aspect-video relative overflow-hidden shadow-xl rounded">
+                    <img src="factory-front.jpg" onerror="this.style.display='none'" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="img-placeholder">
+                        <div class="text-center">
+                            <i class="fas fa-industry text-4xl mb-2"></i>
+                            <p class="text-xs font-bold uppercase tracking-widest">Factory Image Here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE: PRODUCTS -->
+    <div id="products-page" class="page-content py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="mb-10 text-center">
+                <h2 class="text-3xl font-black text-[#0b3d91] uppercase mb-2">Our Full Door Range</h2>
+                <p class="text-gray-500 font-bold uppercase text-xs tracking-widest">Manufactured at Sovereign Works, Dudley</p>
+                <div class="h-1 w-20 bg-[#d92323] mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 1. Roller Shutter Doors -->
+                <div class="product-box">
+                    <div class="h-48 bg-gray-200 overflow-hidden relative">
+                        <img src="roller-shutter.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
+                        <div class="img-placeholder hidden"><i class="fas fa-door-closed text-3xl"></i></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-[#0b3d91] uppercase mb-1">Roller Shutter Doors</h4>
+                        <p class="text-xs text-gray-600 mb-4">Galvanised steel and powder-coated security solutions.</p>
+                        <button onclick="showPage('contact')" class="text-[10px] font-black uppercase text-[#d92323] border-b border-[#d92323]">Enquire</button>
+                    </div>
+                </div>
+
+                <!-- 2. High Speed Insulated -->
+                <div class="product-box">
+                    <div class="h-48 bg-gray-200 overflow-hidden relative">
+                        <img src="high-speed-insulated.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
+                        <div class="img-placeholder hidden"><i class="fas fa-bolt text-3xl"></i></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-[#0b3d91] uppercase mb-1">High Speed Insulated Shutters</h4>
+                        <p class="text-xs text-gray-600 mb-4">Energy saving with rapid access for high-traffic areas.</p>
+                        <button onclick="showPage('contact')" class="text-[10px] font-black uppercase text-[#d92323] border-b border-[#d92323]">Enquire</button>
+                    </div>
+                </div>
+
+                <!-- 3. Insulated Roller Shutters -->
+                <div class="product-box">
+                    <div class="h-48 bg-gray-200 overflow-hidden relative">
+                        <img src="insulated-shutter.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
+                        <div class="img-placeholder hidden"><i class="fas fa-temperature-low text-3xl"></i></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-[#0b3d91] uppercase mb-1">Insulated Roller Shutters</h4>
+                        <p class="text-xs text-gray-600 mb-4">Twin-walled lath for superior thermal and acoustic performance.</p>
+                        <button onclick="showPage('contact')" class="text-[10px] font-black uppercase text-[#d92323] border-b border-[#d92323]">Enquire</button>
+                    </div>
+                </div>
+
+                <!-- 4. Shop Front Shutters -->
+                <div class="product-box">
+                    <div class="h-48 bg-gray-200 overflow-hidden relative">
+                        <img src="shop-front.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
+                        <div class="img-placeholder hidden"><i class="fas fa-store text-3xl"></i></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-[#0b3d91] uppercase mb-1">Shop Front Shutters</h4>
+                        <p class="text-xs text-gray-600 mb-4">Solid, perforated, or punched lath for retail security.</p>
+                        <button onclick="showPage('contact')" class="text-[10px] font-black uppercase text-[#d92323] border-b border-[#d92323]">Enquire</button>
+                    </div>
+                </div>
+
+                <!-- 5. Fire Rated Shutters -->
+                <div class="product-box">
+                    <div class="h-48 bg-gray-200 overflow-hidden relative">
+                        <img src="fire-rated.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
+                        <div class="img-placeholder hidden"><i class="fas fa-fire-extinguisher text-3xl"></i></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-[#0b3d91] uppercase mb-1">Fire Rated Shutters</h4>
+                        <p class="text-xs text-gray-600 mb-4">Certified fire protection providing up to 4 hours of integrity.</p>
+                        <button onclick="showPage('contact')" class="text-[10px] font-black uppercase text-[#d92323] border-b border-[#d92323]">Enquire</button>
+                    </div>
+                </div>
+
+                <!-- 6. Sectional Overhead Doors -->
+                <div class="product-box">
+                    <div class="h-48 bg-gray-200 overflow-hidden relative">
+                        <img src="sectional.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
+                        <div class="img-placeholder hidden"><i class="fas fa-th-large text-3xl"></i></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-[#0b3d91] uppercase mb-1">Sectional Overhead Doors</h4>
+                        <p class="text-xs text-gray-600 mb-4">Insulated panels for loading bays and warehouses.</p>
+                        <button onclick="showPage('contact')" class="text-[10px] font-black uppercase text-[#d92323] border-b border-[#d92323]">Enquire</button>
+                    </div>
+                </div>
+
+                <!-- 7. High Speed Doors -->
+                <div class="product-box">
+                    <div class="h-48 bg-gray-200 overflow-hidden relative">
+                        <img src="high-speed.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
+                        <div class="img-placeholder hidden"><i class="fas fa-running text-3xl"></i></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-[#0b3d91] uppercase mb-1">High Speed Doors</h4>
+                        <p class="text-xs text-gray-600 mb-4">Rapid action fabric doors for environmental control.</p>
+                        <button onclick="showPage('contact')" class="text-[10px] font-black uppercase text-[#d92323] border-b border-[#d92323]">Enquire</button>
+                    </div>
+                </div>
+
+                <!-- 8. AD95 Rapid Roll Doors -->
+                <div class="product-box">
+                    <div class="h-48 bg-gray-200 overflow-hidden relative">
+                        <div class="absolute top-0 right-0 model-badge">AD95</div>
+                        <img src="ad95-rapid.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
+                        <div class="img-placeholder hidden"><i class="fas fa-wind text-3xl"></i></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-[#0b3d91] uppercase mb-1">AD95 Rapid Roll Doors</h4>
+                        <p class="text-xs text-gray-600 mb-4">Specialist high-speed solution for high-cycle industrial use.</p>
+                        <button onclick="showPage('contact')" class="text-[10px] font-black uppercase text-[#d92323] border-b border-[#d92323]">Enquire</button>
+                    </div>
+                </div>
+
+                <!-- 9. AD95 Compact Doors -->
+                <div class="product-box">
+                    <div class="h-48 bg-gray-200 overflow-hidden relative">
+                        <div class="absolute top-0 right-0 model-badge">AD95</div>
+                        <img src="ad95-compact.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
+                        <div class="img-placeholder hidden"><i class="fas fa-compress-arrows-alt text-3xl"></i></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-[#0b3d91] uppercase mb-1">AD95 Compact Doors</h4>
+                        <p class="text-xs text-gray-600 mb-4">High performance design for areas with restricted headroom.</p>
+                        <button onclick="showPage('contact')" class="text-[10px] font-black uppercase text-[#d92323] border-b border-[#d92323]">Enquire</button>
+                    </div>
+                </div>
+
+                <!-- 10. AD77 Premier Roll Garage Doors -->
+                <div class="product-box">
+                    <div class="h-48 bg-gray-200 overflow-hidden relative">
+                        <div class="absolute top-0 right-0 model-badge">AD77</div>
+                        <img src="ad77-garage.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
+                        <div class="img-placeholder hidden"><i class="fas fa-home text-3xl"></i></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-[#0b3d91] uppercase mb-1">AD77 Premier Roll Garage</h4>
+                        <p class="text-xs text-gray-600 mb-4">Elite residential roller garage doors with remote control.</p>
+                        <button onclick="showPage('contact')" class="text-[10px] font-black uppercase text-[#d92323] border-b border-[#d92323]">Enquire</button>
+                    </div>
+                </div>
+
+                <!-- 11. Steel Personnel Doors -->
+                <div class="product-box">
+                    <div class="h-48 bg-gray-200 overflow-hidden relative">
+                        <img src="personnel-door.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
+                        <div class="img-placeholder hidden"><i class="fas fa-walking text-3xl"></i></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-[#0b3d91] uppercase mb-1">Steel Personnel Doors</h4>
+                        <p class="text-xs text-gray-600 mb-4">Multi-point locking steel doors for pedestrian security access.</p>
+                        <button onclick="showPage('contact')" class="text-[10px] font-black uppercase text-[#d92323] border-b border-[#d92323]">Enquire</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE: ABOUT -->
+    <div id="about-page" class="page-content py-12">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-black text-[#0b3d91] uppercase mb-6 italic">About Alliance Industrial Doors</h2>
+            <div class="bg-white p-8 border border-gray-200 leading-relaxed text-gray-700">
+                <p class="mb-4">Alliance Industrial Doors Ltd is a specialist in the manufacture, supply and installation of all types of industrial doors. Based at Sovereign Works in Dudley, West Midlands, we provide services throughout the UK.</p>
+                <p class="mb-4">Established in 1999, we have built a reputation for excellence. Our team of experienced engineers and manufacturers ensure that every door leaving our factory meets the highest standards.</p>
+                <p class="mb-4">We are fully certified members of the DHF (Door & Hardware Federation), ensuring compliance with all safety regulations and British Standards.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE: INSTALLATION -->
+    <div id="installation-page" class="page-content py-12">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-black text-[#0b3d91] uppercase mb-6">Installation & Maintenance</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 border border-gray-200">
+                    <h3 class="font-bold text-[#d92323] uppercase mb-3 underline decoration-2 underline-offset-4">Professional Installation</h3>
+                    <p class="text-sm text-gray-600 mb-4 italic">Our experienced installation teams ensure your doors are fitted correctly and safely.</p>
+                    <ul class="text-xs text-gray-500 space-y-2">
+                        <li>• Expert Site Surveys</li>
+                        <li>• Compliance with Health & Safety</li>
+                        <li>• Fully Skilled In-house Engineers</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 border border-gray-200">
+                    <h3 class="font-bold text-[#d92323] uppercase mb-3 underline decoration-2 underline-offset-4">Planned Maintenance</h3>
+                    <p class="text-sm text-gray-600 mb-4 italic">We provide maintenance services to ensure the longevity and safety of your industrial doors.</p>
+                    <ul class="text-xs text-gray-500 space-y-2">
+                        <li>• Regular Safety Inspections</li>
+                        <li>• Maintenance Contracts</li>
+                        <li>• Part Replacements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE: CONTACT -->
+    <div id="contact-page" class="page-content py-12">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-white border-t-4 border-[#0b3d91] p-8 shadow-md">
+                <h2 class="text-2xl font-bold text-[#0b3d91] uppercase mb-6">Request a Quotation</h2>
+                <form class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 text-sm focus:border-[#0b3d91] outline-none">
+                        <input type="text" placeholder="Company Name" class="w-full p-3 border border-gray-300 text-sm focus:border-[#0b3d91] outline-none">
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="email" placeholder="Email Address" class="w-full p-3 border border-gray-300 text-sm focus:border-[#0b3d91] outline-none">
+                        <input type="tel" placeholder="Phone Number" class="w-full p-3 border border-gray-300 text-sm focus:border-[#0b3d91] outline-none">
+                    </div>
+                    <textarea placeholder="Your Requirements" rows="5" class="w-full p-3 border border-gray-300 text-sm focus:border-[#0b3d91] outline-none"></textarea>
+                    <button type="submit" class="bg-[#0b3d91] text-white px-12 py-4 font-bold uppercase text-sm hover:bg-[#d92323] transition-colors">Submit Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-12">
+            <div>
+                <h5 class="font-bold text-[#d92323] uppercase mb-6 tracking-widest">Alliance Office</h5>
+                <p class="text-sm text-gray-400 leading-relaxed mb-4">
+                    Unit 4A, Sovereign Works,<br>
+                    Deepdale Lane, Dudley,<br>
+                    West Midlands, DY3 2AF
+                </p>
+                <p class="text-xl font-bold text-white">01384 251 951</p>
+            </div>
+            <div>
+                <h5 class="font-bold text-[#d92323] uppercase mb-6 tracking-widest">Our Services</h5>
+                <ul class="text-sm text-gray-400 space-y-3">
+                    <li class="hover:text-white transition-colors">✓ Nationwide Installation</li>
+                    <li class="hover:text-white transition-colors">✓ UK Manufacturing</li>
+                    <li class="hover:text-white transition-colors">✓ Free Site Surveys</li>
+                    <li class="hover:text-white transition-colors">✓ Maintenance Contracts</li>
+                </ul>
+            </div>
+            <div class="text-right flex flex-col justify-between">
+                <div>
+                    <h5 class="font-bold text-[#d92323] uppercase mb-4 tracking-widest">Accreditations</h5>
+                    <div class="flex justify-end gap-4 text-2xl opacity-50">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-certificate"></i>
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                </div>
+                <p class="text-[10px] text-gray-500 mt-8 uppercase tracking-widest italic">British Built in Dudley</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(p => p.classList.remove('active'));
+            const target = document.getElementById(pageId + '-page');
+            if (target) {
+                target.classList.add('active');
+            }
+            window.scrollTo(0,0);
+        }
+    </script>
+</body>
+</html>
