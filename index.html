@@ -22,7 +22,7 @@
         }
 
         .hero-banner {
-            background: linear-gradient(rgba(11, 61, 145, 0.8), rgba(11, 61, 145, 0.8)), 
+            background: linear-gradient(rgba(11, 61, 145, 0.85), rgba(11, 61, 145, 0.85)), 
                         url('hero-bg.jpg');
             background-size: cover;
             background-position: center;
@@ -42,17 +42,20 @@
         }
         .product-box:hover {
             border-color: #0b3d91;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         
         .img-placeholder {
             background: #e2e8f0;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: #94a3b8;
             height: 100%;
             width: 100%;
+            padding: 20px;
+            text-align: center;
         }
 
         .model-badge {
@@ -62,12 +65,11 @@
             padding: 2px 10px;
             font-weight: 800;
             border-radius: 0 0 0 8px;
+            z-index: 10;
         }
 
-        /* Logo Area Styling */
         .logo-container {
             max-width: 280px;
-            height: auto;
         }
     </style>
 </head>
@@ -79,10 +81,12 @@
             
             <!-- Logo Section -->
             <div class="logo-container cursor-pointer" onclick="showPage('home')">
-                <!-- If you have a file named logo.png, it will show here -->
-                <img src="logo.png" alt="Alliance Industrial Doors" onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block'" class="max-h-16 w-auto block">
+                <!-- IMPORTANT: GitHub is Case-Sensitive. Ensure logo.png is exactly named logo.png on your computer -->
+                <img src="./logo.png" alt="Alliance Industrial Doors" 
+                     onerror="handleImageError(this, 'text-logo')" 
+                     class="max-h-16 w-auto block">
                 
-                <!-- Fallback Text Logo if image is missing -->
+                <!-- Fallback Text Logo -->
                 <div id="text-logo" style="display:none;">
                     <h1 class="text-4xl font-black italic text-[#0b3d91] leading-none uppercase tracking-tighter">Alliance</h1>
                     <p class="text-[11px] font-bold text-[#d92323] tracking-[0.35em] uppercase">Industrial Doors Ltd</p>
@@ -138,12 +142,10 @@
                     </div>
                 </div>
                 <div class="bg-gray-100 aspect-video relative overflow-hidden shadow-xl rounded">
-                    <img src="factory-front.jpg" onerror="this.style.display='none'" class="absolute inset-0 w-full h-full object-cover">
+                    <img src="./factory-front.jpg" onerror="this.style.display='none'" class="absolute inset-0 w-full h-full object-cover">
                     <div class="img-placeholder">
-                        <div class="text-center">
-                            <i class="fas fa-industry text-4xl mb-2"></i>
-                            <p class="text-xs font-bold uppercase tracking-widest">Factory Image Here</p>
-                        </div>
+                        <i class="fas fa-industry text-4xl mb-2"></i>
+                        <p class="text-xs font-bold uppercase tracking-widest">Sovereign Works Factory</p>
                     </div>
                 </div>
             </div>
@@ -160,11 +162,10 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 1. Roller Shutter Doors -->
+                <!-- Product Items -->
                 <div class="product-box">
                     <div class="h-48 bg-gray-200 overflow-hidden relative">
-                        <img src="roller-shutter.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
-                        <div class="img-placeholder hidden"><i class="fas fa-door-closed text-3xl"></i></div>
+                        <img src="./roller-shutter.jpg" onerror="handleProductImageError(this, 'Roller Shutter')" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h4 class="font-bold text-[#0b3d91] uppercase mb-1">Roller Shutter Doors</h4>
@@ -173,11 +174,9 @@
                     </div>
                 </div>
 
-                <!-- 2. High Speed Insulated -->
                 <div class="product-box">
                     <div class="h-48 bg-gray-200 overflow-hidden relative">
-                        <img src="high-speed-insulated.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
-                        <div class="img-placeholder hidden"><i class="fas fa-bolt text-3xl"></i></div>
+                        <img src="./high-speed-insulated.jpg" onerror="handleProductImageError(this, 'High Speed Insulated')" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h4 class="font-bold text-[#0b3d91] uppercase mb-1">High Speed Insulated Shutters</h4>
@@ -186,11 +185,9 @@
                     </div>
                 </div>
 
-                <!-- 3. Insulated Roller Shutters -->
                 <div class="product-box">
                     <div class="h-48 bg-gray-200 overflow-hidden relative">
-                        <img src="insulated-shutter.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
-                        <div class="img-placeholder hidden"><i class="fas fa-temperature-low text-3xl"></i></div>
+                        <img src="./insulated-shutter.jpg" onerror="handleProductImageError(this, 'Insulated Roller')" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h4 class="font-bold text-[#0b3d91] uppercase mb-1">Insulated Roller Shutters</h4>
@@ -199,11 +196,9 @@
                     </div>
                 </div>
 
-                <!-- 4. Shop Front Shutters -->
                 <div class="product-box">
                     <div class="h-48 bg-gray-200 overflow-hidden relative">
-                        <img src="shop-front.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
-                        <div class="img-placeholder hidden"><i class="fas fa-store text-3xl"></i></div>
+                        <img src="./shop-front.jpg" onerror="handleProductImageError(this, 'Shop Front')" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h4 class="font-bold text-[#0b3d91] uppercase mb-1">Shop Front Shutters</h4>
@@ -212,11 +207,9 @@
                     </div>
                 </div>
 
-                <!-- 5. Fire Rated Shutters -->
                 <div class="product-box">
                     <div class="h-48 bg-gray-200 overflow-hidden relative">
-                        <img src="fire-rated.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
-                        <div class="img-placeholder hidden"><i class="fas fa-fire-extinguisher text-3xl"></i></div>
+                        <img src="./fire-rated.jpg" onerror="handleProductImageError(this, 'Fire Rated')" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h4 class="font-bold text-[#0b3d91] uppercase mb-1">Fire Rated Shutters</h4>
@@ -225,11 +218,9 @@
                     </div>
                 </div>
 
-                <!-- 6. Sectional Overhead Doors -->
                 <div class="product-box">
                     <div class="h-48 bg-gray-200 overflow-hidden relative">
-                        <img src="sectional.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
-                        <div class="img-placeholder hidden"><i class="fas fa-th-large text-3xl"></i></div>
+                        <img src="./sectional.jpg" onerror="handleProductImageError(this, 'Sectional Overhead')" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h4 class="font-bold text-[#0b3d91] uppercase mb-1">Sectional Overhead Doors</h4>
@@ -238,25 +229,10 @@
                     </div>
                 </div>
 
-                <!-- 7. High Speed Doors -->
-                <div class="product-box">
-                    <div class="h-48 bg-gray-200 overflow-hidden relative">
-                        <img src="high-speed.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
-                        <div class="img-placeholder hidden"><i class="fas fa-running text-3xl"></i></div>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-[#0b3d91] uppercase mb-1">High Speed Doors</h4>
-                        <p class="text-xs text-gray-600 mb-4">Rapid action fabric doors for environmental control.</p>
-                        <button onclick="showPage('contact')" class="text-[10px] font-black uppercase text-[#d92323] border-b border-[#d92323]">Enquire</button>
-                    </div>
-                </div>
-
-                <!-- 8. AD95 Rapid Roll Doors -->
                 <div class="product-box">
                     <div class="h-48 bg-gray-200 overflow-hidden relative">
                         <div class="absolute top-0 right-0 model-badge">AD95</div>
-                        <img src="ad95-rapid.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
-                        <div class="img-placeholder hidden"><i class="fas fa-wind text-3xl"></i></div>
+                        <img src="./ad95-rapid.jpg" onerror="handleProductImageError(this, 'AD95 Rapid Roll')" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h4 class="font-bold text-[#0b3d91] uppercase mb-1">AD95 Rapid Roll Doors</h4>
@@ -265,26 +241,10 @@
                     </div>
                 </div>
 
-                <!-- 9. AD95 Compact Doors -->
-                <div class="product-box">
-                    <div class="h-48 bg-gray-200 overflow-hidden relative">
-                        <div class="absolute top-0 right-0 model-badge">AD95</div>
-                        <img src="ad95-compact.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
-                        <div class="img-placeholder hidden"><i class="fas fa-compress-arrows-alt text-3xl"></i></div>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-[#0b3d91] uppercase mb-1">AD95 Compact Doors</h4>
-                        <p class="text-xs text-gray-600 mb-4">High performance design for areas with restricted headroom.</p>
-                        <button onclick="showPage('contact')" class="text-[10px] font-black uppercase text-[#d92323] border-b border-[#d92323]">Enquire</button>
-                    </div>
-                </div>
-
-                <!-- 10. AD77 Premier Roll Garage Doors -->
                 <div class="product-box">
                     <div class="h-48 bg-gray-200 overflow-hidden relative">
                         <div class="absolute top-0 right-0 model-badge">AD77</div>
-                        <img src="ad77-garage.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
-                        <div class="img-placeholder hidden"><i class="fas fa-home text-3xl"></i></div>
+                        <img src="./ad77-garage.jpg" onerror="handleProductImageError(this, 'AD77 Garage')" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h4 class="font-bold text-[#0b3d91] uppercase mb-1">AD77 Premier Roll Garage</h4>
@@ -293,11 +253,9 @@
                     </div>
                 </div>
 
-                <!-- 11. Steel Personnel Doors -->
                 <div class="product-box">
                     <div class="h-48 bg-gray-200 overflow-hidden relative">
-                        <img src="personnel-door.jpg" onerror="this.parentElement.querySelector('.img-placeholder').style.display='flex'; this.style.display='none'" class="w-full h-full object-cover">
-                        <div class="img-placeholder hidden"><i class="fas fa-walking text-3xl"></i></div>
+                        <img src="./personnel-door.jpg" onerror="handleProductImageError(this, 'Personnel Door')" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h4 class="font-bold text-[#0b3d91] uppercase mb-1">Steel Personnel Doors</h4>
@@ -373,10 +331,9 @@
     <footer class="bg-gray-900 text-white py-16">
         <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-12">
             <div>
-                <!-- Footer Logo -->
                 <div class="mb-6 opacity-80 grayscale brightness-200">
-                    <img src="logo.png" alt="Alliance Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" class="max-h-12 w-auto">
-                    <div style="display:none;" class="font-black italic text-xl uppercase tracking-tighter">Alliance <span class="text-xs block tracking-widest font-bold not-italic">Industrial Doors</span></div>
+                    <img src="./logo.png" alt="Alliance Logo" onerror="handleImageError(this, 'footer-text-logo')" class="max-h-12 w-auto">
+                    <div id="footer-text-logo" style="display:none;" class="font-black italic text-xl uppercase tracking-tighter">Alliance <span class="text-xs block tracking-widest font-bold not-italic">Industrial Doors</span></div>
                 </div>
                 <p class="text-sm text-gray-400 leading-relaxed mb-4">
                     Unit 4A, Sovereign Works,<br>
@@ -417,6 +374,27 @@
                 target.classList.add('active');
             }
             window.scrollTo(0,0);
+        }
+
+        // Script to handle missing images on GitHub
+        function handleImageError(img, fallbackId) {
+            img.style.display = 'none';
+            const fallback = document.getElementById(fallbackId);
+            if(fallback) fallback.style.display = 'block';
+        }
+
+        // Script to handle missing product images
+        function handleProductImageError(img, title) {
+            const parent = img.parentElement;
+            img.style.display = 'none';
+            
+            const placeholder = document.createElement('div');
+            placeholder.className = 'img-placeholder';
+            placeholder.innerHTML = `
+                <i class="fas fa-door-open text-3xl mb-2"></i>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400">${title}</p>
+            `;
+            parent.appendChild(placeholder);
         }
     </script>
 </body>
