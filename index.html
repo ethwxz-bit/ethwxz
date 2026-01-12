@@ -63,6 +63,12 @@
             font-weight: 800;
             border-radius: 0 0 0 8px;
         }
+
+        /* Logo Area Styling */
+        .logo-container {
+            max-width: 280px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -70,15 +76,25 @@
     <!-- Top Header -->
     <div class="bg-white py-4 border-b-4 border-[#0b3d91]">
         <div class="max-w-6xl mx-auto px-4 flex flex-wrap justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <div class="text-left">
-                    <h1 class="text-3xl font-black italic text-[#0b3d91] leading-none uppercase tracking-tighter">Alliance</h1>
-                    <p class="text-[10px] font-bold text-[#d92323] tracking-[0.3em] uppercase">Industrial Doors Ltd</p>
+            
+            <!-- Logo Section -->
+            <div class="logo-container cursor-pointer" onclick="showPage('home')">
+                <!-- If you have a file named logo.png, it will show here -->
+                <img src="logo.png" alt="Alliance Industrial Doors" onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block'" class="max-h-16 w-auto block">
+                
+                <!-- Fallback Text Logo if image is missing -->
+                <div id="text-logo" style="display:none;">
+                    <h1 class="text-4xl font-black italic text-[#0b3d91] leading-none uppercase tracking-tighter">Alliance</h1>
+                    <p class="text-[11px] font-bold text-[#d92323] tracking-[0.35em] uppercase">Industrial Doors Ltd</p>
                 </div>
             </div>
+
             <div class="text-right hidden sm:block">
-                <p class="text-xs text-gray-500 font-bold uppercase">Call our Dudley Office</p>
-                <p class="text-2xl font-black text-[#0b3d91]">01384 251 951</p>
+                <p class="text-xs text-gray-500 font-bold uppercase mb-1">Dudley Manufacturing Office</p>
+                <div class="flex items-center justify-end text-[#0b3d91]">
+                    <i class="fas fa-phone-alt mr-2"></i>
+                    <p class="text-2xl font-black">01384 251 951</p>
+                </div>
             </div>
         </div>
     </div>
@@ -357,7 +373,11 @@
     <footer class="bg-gray-900 text-white py-16">
         <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-12">
             <div>
-                <h5 class="font-bold text-[#d92323] uppercase mb-6 tracking-widest">Alliance Office</h5>
+                <!-- Footer Logo -->
+                <div class="mb-6 opacity-80 grayscale brightness-200">
+                    <img src="logo.png" alt="Alliance Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" class="max-h-12 w-auto">
+                    <div style="display:none;" class="font-black italic text-xl uppercase tracking-tighter">Alliance <span class="text-xs block tracking-widest font-bold not-italic">Industrial Doors</span></div>
+                </div>
                 <p class="text-sm text-gray-400 leading-relaxed mb-4">
                     Unit 4A, Sovereign Works,<br>
                     Deepdale Lane, Dudley,<br>
