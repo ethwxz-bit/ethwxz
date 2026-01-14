@@ -22,9 +22,8 @@
         }
 
         .hero-banner {
-            /* Updated with the actual image URL from allianceindustrialdoors.net */
-            background: linear-gradient(rgba(11, 61, 145, 0.85), rgba(11, 61, 145, 0.3)), 
-                        url('https://allianceindustrialdoors.net/wp-content/uploads/2021/04/Alliance-hero.jpg');
+            background: linear-gradient(rgba(11, 61, 145, 0.85), rgba(11, 61, 145, 0.1)), 
+                        url('hero-bg.jpg');
             background-size: cover;
             background-position: center;
             background-color: #0b3d91;
@@ -74,24 +73,31 @@
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-50">
 
+    <!-- Slim Top Bar (Secure Access) -->
     <div class="bg-gray-100 border-b border-gray-200 py-1">
         <div class="max-w-6xl mx-auto px-4 flex justify-end">
-            <a href="https://shivering-spark.localsite.io" target="_blank" title="Secure Access" class="text-gray-400 hover:text-[#0b3d91] transition-colors">
-                <i class="fas fa-lock text-xs"></i>
+            <a href="https://shivering-spark.localsite.io" target="_blank" title="Secure Access"
+               class="text-gray-400 hover:text-[#0b3d91] transition-colors">
+                <i class="fas fa-lock text-[10px]"></i>
             </a>
         </div>
     </div>
 
+
+    <!-- Top Header -->
     <div class="bg-white py-4 border-b-4 border-[#0b3d91]">
         <div class="max-w-6xl mx-auto px-4 flex flex-wrap justify-between items-center">
             
+            <!-- Logo Section -->
             <div class="logo-container cursor-pointer" onclick="showPage('home')">
+                <!-- IMPORTANT: GitHub is Case-Sensitive. Ensure logo.png is exactly named logo.png on your computer -->
                 <img src="./logo.png" alt="Alliance Industrial Doors" 
                      onerror="handleImageError(this, 'text-logo')" 
                      class="max-h-16 w-auto block">
                 
+                <!-- Fallback Text Logo -->
                 <div id="text-logo" style="display:none;">
                     <h1 class="text-4xl font-black italic text-[#0b3d91] leading-none uppercase tracking-tighter">Alliance</h1>
                     <p class="text-[11px] font-bold text-[#d92323] tracking-[0.35em] uppercase">Industrial Doors Ltd</p>
@@ -108,6 +114,7 @@
         </div>
     </div>
 
+    <!-- Main Navigation -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-6xl mx-auto flex flex-wrap border-x border-gray-200">
             <button onclick="showPage('home')" class="nav-item py-4 hover:bg-gray-50 border-l border-gray-200">Home</button>
@@ -118,6 +125,7 @@
         </div>
     </nav>
 
+    <!-- PAGE: HOME -->
     <div id="home-page" class="page-content active">
         <header class="hero-banner py-32 text-white">
             <div class="max-w-6xl mx-auto px-4">
@@ -155,6 +163,7 @@
         </section>
     </div>
 
+    <!-- PAGE: PRODUCTS -->
     <div id="products-page" class="page-content py-12">
         <div class="max-w-6xl mx-auto px-4">
             <div class="mb-10 text-center">
@@ -164,6 +173,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Items -->
                 <div class="product-box">
                     <div class="h-48 bg-gray-200 overflow-hidden relative">
                         <img src="./roller-shutter.jpg" onerror="handleProductImageError(this, 'Roller Shutter')" class="w-full h-full object-cover">
@@ -268,10 +278,12 @@
         </div>
     </div>
 
+    <!-- PAGE: ABOUT -->
     <div id="about-page" class="page-content py-12">
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-3xl font-black text-[#0b3d91] uppercase mb-6 italic">About Alliance Industrial Doors</h2>
             <div class="bg-white p-8 border border-gray-200 leading-relaxed text-gray-700">
+                <p class="mb-4">From shutters to steel doors, insulated roller shutters to shop front shutters, Alliance Industrial Doors can help.  .</p>
                 <p class="mb-4">Based in Dudley, we’ve been manufacturing, supplying and installing industrial doors and roller shutters for businesses right across the UK since 1999.</p>
                 <p class="mb-4">As one of the few businesses in the UK able to manufacture and install doors up to 15m in height, it’s fair to say that we’re an industry-leading team, and we’re here to ensure that you get the right access solution.</p>
                 <p class="mb-4">We are fully certified members of the DHF (Door & Hardware Federation), ensuring compliance with all safety regulations and British Standards.</p>
@@ -279,6 +291,7 @@
         </div>
     </div>
 
+    <!-- PAGE: INSTALLATION -->
     <div id="installation-page" class="page-content py-12">
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-3xl font-black text-[#0b3d91] uppercase mb-6">Installation & Maintenance</h2>
@@ -295,11 +308,15 @@
                 <div class="bg-white p-6 border border-gray-200">
                     <h3 class="font-bold text-[#d92323] uppercase mb-3 underline decoration-2 underline-offset-4">Planned Maintenance</h3>
                     <p class="text-sm text-gray-600 mb-4 italic">We provide maintenance services to ensure the longevity and safety of your industrial doors.</p>
+                    <ul class="text-xs text-gray-500 space-y-2">
+                        
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- PAGE: CONTACT -->
     <div id="contact-page" class="page-content py-12">
         <div class="max-w-4xl mx-auto px-4">
             <div class="bg-white border-t-4 border-[#0b3d91] p-8 shadow-md">
@@ -320,6 +337,7 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer class="bg-gray-900 text-white py-16">
         <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-12">
             <div>
@@ -367,12 +385,14 @@
             window.scrollTo(0,0);
         }
 
+        // Script to handle missing images on GitHub
         function handleImageError(img, fallbackId) {
             img.style.display = 'none';
             const fallback = document.getElementById(fallbackId);
             if(fallback) fallback.style.display = 'block';
         }
 
+        // Script to handle missing product images
         function handleProductImageError(img, title) {
             const parent = img.parentElement;
             img.style.display = 'none';
